@@ -19,7 +19,7 @@ app.get('/:id', (req, res) => {
         if(!url) {
             res.redirect('https://dak.sh');
         } else {
-            res.redirect(redirectTo);
+            res.redirect(`https://${url.redirectTo}`);
         }
     });
 });
