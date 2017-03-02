@@ -1,7 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var app = express();
-mongoose.connect('mongodb://no:no@ds058369.mlab.com:58369/lulz');
+mongoose.connect(''); // add your own url.
 var Schema = mongoose.Schema;
 var Url = mongoose.model('Url', {
     redirectTo: {
