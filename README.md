@@ -1,6 +1,8 @@
 # URL-Shortener
 Make a URL-Shortener easily with Node.js and Mongoose ODM!
+
 Licensed Under MIT | (c) to Daksh Miglani (dak.sh | @Dakshster)
+
 Deployed on Heroku, https://urld.herokuapp.com/make/AddUrlHere (without http / https protocols)
 
 # What does it Use?
