@@ -18,7 +18,7 @@ var Url = mongoose.model('Url', {
         required: true
     }
 });
-mongoose.connect('mongodb://daksh:Noob#123@ds145359.mlab.com:45359/udaksh');
+mongoose.connect(''); // add database url here.
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
@@ -58,7 +58,7 @@ if(!req.body.url) {
     });
     url.save((err) => {
         res.json({
-           short: 'https://linke.herokuapp.com/' +  id,
+           short: 'https://linke.herokuapp.com/' +  id, // add your shortener's url
            url: req.body.url
         });
     });
@@ -70,7 +70,7 @@ if(!req.body.url) {
     });
     url.save((err) => {
         res.json({
-           short: 'https://linke.herokuapp.com/' +  id,
+           short: 'https://linke.herokuapp.com/' +  id, // add url of shortener
            url: 'http://' + req.body.url
         });
     });
