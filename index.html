@@ -1,0 +1,54 @@
+<html>  
+    <head>
+        <title>Url Shortener by Daksh Miglani</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	    <link rel="stylesheet" type="text/css" href="app.css">
+	    <meta charset="utf-8">
+	    <meta name="description" content="Learn More about Daksh Miglani on dak.sh">
+  	    <meta name="keywords" content="Daksh, Daksh Miglani, miglani">
+  	    <meta name="author" content="Daksh Miglani">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse bg-inverse" id="nav">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" :href="logo.v2">Link Shortener by {{ logo.name }}</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" :href="logo.url" target="_blank"> Home - {{logo.name}} <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" :href="twitter.url" target="_blank">{{ twitter.name }} <span class="sr-only">(current)</span></a>
+      </li>      
+      <li class="nav-item">
+        <a class="nav-link" :href="github.url" target="_blank">{{ github.name }}</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div id="app" class="container">
+    <h1 class="text-center">{{ main.title }}</h1>
+    <h4 class="text-center"> {{ main.desc }}</h4>
+    <form>
+<div class="form-group has-success">
+  <label class="form-control-label" for="inputSuccess1">Enter Link Below.</label>
+  <input type="text" class="form-control form-control-success" id="inputSuccess1" name="url">
+  <br>
+  <button class="btn btn-success btn-lg" type="submit">Submit</button>
+</div>
+</form>
+<div class="show"></div>
+</div>
+
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    	<script type="text/javascript" src="app.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    </body>
+</html>
