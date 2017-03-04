@@ -36,7 +36,7 @@ $(document).ready(function(){
             type: 'POST',
             url: '/make',
             data: formData,
-            dataTyoe: 'json',
+            dataType: 'json',
             encode: true
         }).done(function(data) {
             console.log(data);
