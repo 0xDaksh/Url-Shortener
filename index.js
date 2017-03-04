@@ -1,5 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var shortid = require('shortid');
 var app = express();
 mongoose.connect(''); // add your own url.
 var Schema = mongoose.Schema;
@@ -10,7 +11,7 @@ var Url = mongoose.model('Url', {
     },
     redirectId: {
         type: String,
-        required: true,
+        default: shortid.generate,
         unique: true
     }
 });
@@ -28,10 +29,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/make/:url', (req, res) => {
-    var id = Math.random().toString(36).substr(22);
     var url = new Url({
-        redirectTo: req.params.url,
-        redirectId: id
+        redirectTo: req.params.url
     });
     url.save((err) => {
         res.json({
