@@ -29,9 +29,11 @@ app.get('/:id', (req, res) => {
         redirectId: req.params.id
     }, (err, url) => {
         if(!url) {
+            console.log('nu url');
             res.redirect('/');
         } else {
-            res.redirect('http://' + url.redirect);
+            console.log(url.redirect);
+            res.redirect(`${url.redirect}`);
         }
     });
 });
