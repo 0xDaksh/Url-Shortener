@@ -48,6 +48,7 @@ if(!req.body.url) {
     });
 } else {
     if(isURL(req.body.url)) {
+	var use = req.body.ur
     var id = Math.random().toString(36).substr(22);
     var url = new Url({
         redirectId: id,
