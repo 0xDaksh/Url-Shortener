@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 
 app.get('/:id', (req, res) => {
     Url.findOne({
-        redirectId: req.params.id 
+        redirectId: req.params.id
     }, (err, url) => {
         if(!url) {
             res.redirect('/');
@@ -55,7 +55,7 @@ if(!req.body.url) {
     });
     url.save((err) => {
         res.json({
-           short: 'https://dak.sh/u/' +  id,
+           short: 'https://linke.herokuapp.com/' +  id,
            url: req.body.url
         });
     });
@@ -67,11 +67,11 @@ if(!req.body.url) {
     });
     url.save((err) => {
         res.json({
-           short: 'https://dak.sh/u/' +  id,
+           short: 'https://linke.herokuapp.com/' +  id,
            url: 'http://' + req.body.url
         });
     });
     }
 }
 });
-app.listen(3971);
+app.listen(process.env.PORT);
