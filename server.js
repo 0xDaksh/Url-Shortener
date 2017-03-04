@@ -31,7 +31,7 @@ app.get('/:id', (req, res) => {
         if(!url) {
             res.redirect('/');
         } else {
-            res.redirect(url.redirect);
+            res.redirect('http://' + url.redirect);
         }
     });
 });
@@ -74,4 +74,4 @@ if(!req.body.url) {
     }
 }
 });
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 3000);
