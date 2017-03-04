@@ -64,7 +64,7 @@ if(!req.body.url) {
     var id = Math.random().toString(36).substr(22);
     var url = new Url({
         redirectId: id,
-        redirect: req.body.url
+        redirect: 'http://' + req.body.url
     });
     url.save((err) => {
         res.json({
