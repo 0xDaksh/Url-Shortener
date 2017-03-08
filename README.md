@@ -1,4 +1,6 @@
 # URL-Shortener
+[![npm](https://img.shields.io/npm/l/express.svg?style=flat-square)](https://github.com/Dakshster/Url-Shortener/blob/master/LICENSE)
+[![steam](https://img.shields.io/badge/steam-donate-green.svg?style=flat-square)](gg.gg/dmtrade)
 Make a URL-Shortener easily with Node.js and Mongoose ODM!
 
 Licensed Under MIT | (c) to Daksh Miglani (https://dak.sh | @Dakshster)
