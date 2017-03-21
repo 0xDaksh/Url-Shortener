@@ -17,9 +17,16 @@ Deployed on Heroku, https://linke.herokuapp.com/
 
 # How to Use it?
 
-1. On Index.js, line 21 add your url to connect to MongoDB
-2. On Index.js, On line 58 and 70, change it to your shortener's url
-3. Deploy to your server, default port is 3000 but you can use .env PORT
+You just have to update 2 variables at Line 7 and 8 of `server.js` file:
+
+1. Update the `siteURL` variable (for example: `https://dak.sh`) **without**
+any `/` (backslash) at end. If you are using localhost, just leave it blank, or
+you have to make sure that the domain name is pointing to the server if using
+TLD.
+
+2. Update the `databaseURL` variable with your MongoDB server url.
+
+... and you are done!
 
 # Bugs
 If you find any bugs, You can submit a pull request!
