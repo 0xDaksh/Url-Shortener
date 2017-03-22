@@ -1,8 +1,14 @@
 var express = require('express'),
     app = express(),
     mongoose = require('mongoose'),
+    shortid = require('shortid'),
     bodyParser = require('body-parser');
 
+var databaseURL = '', // Enter your mongodb database url here.
+    siteURL=''; //Enter your site URL here
+    
+siteURL = siteURL.length>0 ? siteURL : 'localhost';
+    
 app.use(bodyParser.urlencoded({
     extended: false
 }));
@@ -18,7 +24,7 @@ var Url = mongoose.model('Url', {
         required: true
     }
 });
-mongoose.connect(''); // add database url here.
+mongoose.connect(databaseURL);
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
@@ -50,31 +56,30 @@ if(!req.body.url) {
     });
 } else {
     if(isURL(req.body.url)) {
-	var use = req.body.ur
-    var id = Math.random().toString(36).substr(22);
     var url = new Url({
-        redirectId: id,
+        redirectId: shortid.generate(),
         redirect: req.body.url
     });
     url.save((err) => {
         res.json({
-           short: 'https://linke.herokuapp.com/' +  id, // add your shortener's url
+           short: siteURL + '/' +  url.redirectId,
            url: req.body.url
         });
     });
     } else {
-    var id = Math.random().toString(36).substr(22);
     var url = new Url({
-        redirectId: id,
+        redirectId: shortid.generate(),
         redirect: 'http://' + req.body.url
     });
     url.save((err) => {
         res.json({
-           short: 'https://linke.herokuapp.com/' +  id, // add url of shortener
+           short: siteURL + '/' +  url.redirectId,
            url: 'http://' + req.body.url
         });
     });
     }
 }
 });
-app.listen(process.env.PORT || 3000);
+var port = process.env.PORT ? process.env.PORT : 3000;
+app.listen(port);
+console.log('Server listening on port ', port);
