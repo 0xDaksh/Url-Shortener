@@ -6,7 +6,7 @@ Make a URL-Shortener easily with Node.js and Mongoose ODM!
 
 Licensed Under MIT | (c) to Daksh Miglani (https://dak.sh | @Dakshster)
 
-Deployed on Heroku, https://u.dak.sh
+Deployed on Heroku, http://u.dak.sh
 
 # What does it Use?
 1. Node.js
