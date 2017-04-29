@@ -1,4 +1,9 @@
 # URL-Shortener
+
+## Deprecated, Check the Updated Version
+
+https://github.com/Dakshster/node-URLShortner/
+
 [![npm](https://img.shields.io/npm/l/express.svg?style=flat-square)](https://github.com/Dakshster/Url-Shortener/blob/master/LICENSE)
 [![steam](https://img.shields.io/badge/steam-donate-green.svg?style=flat-square)](http://gg.gg/dmtrade)
 
